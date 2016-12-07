@@ -31,6 +31,9 @@ class KCSideViewController: UIViewController {
             if (rootView != nil && cornerRadiusEnable) {
                 rootView.layer.masksToBounds = true
                 shadowEnable = false
+                rootView.layer.shadowColor = UIColor.clear.cgColor
+                rootView.layer.shadowOpacity = 0.0;
+                rootView.layer.shadowRadius = 0.0
             }
         }
     }
@@ -40,6 +43,9 @@ class KCSideViewController: UIViewController {
             if (rootView != nil && shadowEnable) {
                 rootView.layer.masksToBounds = false
                 cornerRadiusEnable = false
+                rootView.layer.shadowColor = UIColor.black.cgColor
+                rootView.layer.shadowOpacity = 0.18;
+                rootView.layer.shadowRadius = 5
             }
         }
     }
@@ -226,13 +232,6 @@ class KCSideViewController: UIViewController {
             if __CGPointEqualToPoint(rootView.center, resetCenter) {
 //                leftView.center = CGPoint(x:_resetCenter.x - maxOffsetX,y:_resetCenter.y)
 //                rigthView.center = CGPoint(x:_resetCenter.x + maxOffsetX,y:_resetCenter.y)
-                
-                if self.shadowEnable {
-                    self.rootView.transform = CGAffineTransform(scaleX:0.8,y:0.8)
-                    self.rootView.layer.shadowColor = UIColor.black.cgColor
-                    self.rootView.layer.shadowOpacity = 0.18;
-                    self.rootView.layer.shadowRadius = 5
-                }
             }
             break
         case .changed:
