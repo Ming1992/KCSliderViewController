@@ -50,6 +50,9 @@ class KCSideViewController: UIViewController {
         }
     }
     
+    /**<默认是启用侧边栏*/
+    var sideEnable = true
+    
     private var beganPoint: CGPoint!                    /**<滑动的开始点*/
     private var resetCenter: CGPoint!                   /**<初始化中心点*/
     private var maxOffsetX: CGFloat!                    /**<最大偏移值 默认为屏幕宽度的70%*/
@@ -322,6 +325,7 @@ class KCSideViewController: UIViewController {
 //  UIViewController侧边栏的分类
 extension UIViewController {
     
+    /**<关闭侧边栏*/
     open func kc_closeSideViewController(animate:Bool){
         
         var superVC: UIViewController? = self.parent!
@@ -338,6 +342,7 @@ extension UIViewController {
         }
     }
     
+    /**<开启侧边栏*/
     open func kc_openSideViewController(left:Bool){
         
         var superVC: UIViewController? = self.parent!
@@ -352,6 +357,22 @@ extension UIViewController {
                 else {
                     sideViewController.kc_openRightSide()
                 }
+                return
+            }
+            else {
+                superVC = superVC?.parent!
+            }
+        }
+    }
+    
+    /**<设置是否启用侧边栏*/
+    open func kc_sideEnable(enable:Bool){
+        var superVC: UIViewController? = self.parent!
+        while superVC != nil {
+            if (superVC?.isKind(of: KCSideViewController.self))! {
+                
+                let sideViewController = superVC as! KCSideViewController
+                sideViewController.sideEnable = enable
                 return
             }
             else {
