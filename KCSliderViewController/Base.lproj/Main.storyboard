@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="k7K-VW-9RX">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="4L9-oD-KUG">
+            <objects>
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="k7K-VW-9RX" customClass="MainViewController" customModule="KCSliderViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LcR-o7-xbk"/>
+                        <viewControllerLayoutGuide type="bottom" id="CNf-9C-ZYU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YtV-dk-jhK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tbb-Cb-fs9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2406" y="-176"/>
+        </scene>
+        <!--Left View Controller-->
+        <scene sceneID="LK1-L3-b6A">
+            <objects>
+                <viewController storyboardIdentifier="LeftViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Buo-qI-0ag" customClass="LeftViewController" customModule="KCSliderViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="J7R-zh-mYJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="mVQ-Ct-Bd0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YO5-1v-9oT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MYH-2k-Ivb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Buo-qI-0ag" id="9IN-oa-8gu"/>
+                                    <outlet property="delegate" destination="Buo-qI-0ag" id="1CE-A2-NrU"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MYH-2k-Ivb" firstAttribute="leading" secondItem="YO5-1v-9oT" secondAttribute="leading" id="5YX-y7-iyo"/>
+                            <constraint firstAttribute="trailing" secondItem="MYH-2k-Ivb" secondAttribute="trailing" id="G02-hV-7Xp"/>
+                            <constraint firstItem="MYH-2k-Ivb" firstAttribute="top" secondItem="YO5-1v-9oT" secondAttribute="top" id="T5k-Xt-Yzq"/>
+                            <constraint firstItem="mVQ-Ct-Bd0" firstAttribute="top" secondItem="MYH-2k-Ivb" secondAttribute="bottom" id="TpU-Lh-Td3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tab_function" destination="MYH-2k-Ivb" id="4DQ-EH-KKA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zBU-hs-ApI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2407" y="555"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="Ib6-hV-QKZ">
+            <objects>
+                <tableViewController storyboardIdentifier="HomeTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gTq-8X-30o" customClass="HomeTableViewController" customModule="KCSliderViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="RIk-9e-HEN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="NiT-CD-PLr">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NiT-CD-PLr" id="65E-9o-CWY">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="gTq-8X-30o" id="r4Q-J4-IYE"/>
+                            <outlet property="delegate" destination="gTq-8X-30o" id="5PC-1K-wBW"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="hjH-In-iIo"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lXN-JI-nfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-532" y="-177"/>
+        </scene>
+        <!--Right View Controller-->
+        <scene sceneID="oRm-iz-fKV">
+            <objects>
+                <viewController storyboardIdentifier="RightViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LlZ-s5-P1G" customClass="RightViewController" customModule="KCSliderViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kOc-Tm-lJ8"/>
+                        <viewControllerLayoutGuide type="bottom" id="rum-7g-IVh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2jb-ak-Fp2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.54901960780000003" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bhz-Nr-gCO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1410" y="555"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="pUN-63-ylC">
+            <objects>
+                <navigationController storyboardIdentifier="RootViewController" id="DO2-Eb-2L7" customClass="RootViewController" customModule="KCSliderViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="N07-8r-yWA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="gTq-8X-30o" kind="relationship" relationship="rootViewController" id="oMM-dc-ac3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OHd-MQ-qyg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1409" y="-177"/>
+        </scene>
+    </scenes>
+</document>
