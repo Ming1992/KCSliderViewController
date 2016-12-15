@@ -28,6 +28,16 @@ class HomeTableViewController: UITableViewController {
         arr_dictionary = [dic1,dic2,dic3,dic4,dic5,dic6]
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.kc_sideEnable(enable: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.kc_sideEnable(enable: false)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -58,6 +68,11 @@ class HomeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        self.kc_closeSideViewController(animate: true)
         
-        self.kc_openSideViewController(left: true)
+//        self.kc_openSideViewController(left: true)
+        
+        
+        let storyboard = UIStoryboard(name:"Main",bundle:nil)
+        let LastViewController = storyboard.instantiateViewController(withIdentifier: "LastViewController")
+        self.navigationController?.pushViewController(LastViewController, animated: true)
     }
 }

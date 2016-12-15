@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3B4F8A51E0236C700D966B9 /* LastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B4F8A41E0236C700D966B9 /* LastViewController.swift */; };
 		B3D602101DEED81F00C151FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D6020F1DEED81F00C151FB /* AppDelegate.swift */; };
 		B3D602151DEED81F00C151FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3D602131DEED81F00C151FB /* Main.storyboard */; };
 		B3D602171DEED81F00C151FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3D602161DEED81F00C151FB /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B3B4F8A41E0236C700D966B9 /* LastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastViewController.swift; sourceTree = "<group>"; };
 		B3D6020C1DEED81F00C151FB /* KCSliderViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KCSliderViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D6020F1DEED81F00C151FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3D602141DEED81F00C151FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				B3D6022F1DF010B700C151FB /* RootViewController.swift */,
 				B3D6023C1DF157A800C151FB /* HomeTableViewController.swift */,
 				B3D6023E1DF17EBC00C151FB /* RightViewController.swift */,
+				B3B4F8A41E0236C700D966B9 /* LastViewController.swift */,
 			);
 			path = KCSliderViewController;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 				B3D602221DEED8DA00C151FB /* KCSideViewController.swift in Sources */,
 				B3D602301DF010B700C151FB /* RootViewController.swift in Sources */,
 				B3D602281DEFB79800C151FB /* LeftViewController.swift in Sources */,
+				B3B4F8A51E0236C700D966B9 /* LastViewController.swift in Sources */,
 				B3D602101DEED81F00C151FB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

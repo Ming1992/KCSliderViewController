@@ -57,6 +57,6 @@ class LeftViewController: UIViewController,UITableViewDataSource,UITableViewDele
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.kc_closeSideViewController(animate: false)
+        self.kc_closeSideViewController(animate: true)
     }
 }

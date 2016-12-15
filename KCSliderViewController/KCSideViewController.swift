@@ -73,7 +73,6 @@ class KCSideViewController: UIViewController {
     //  遮罩层
     var shadeView: UIView?
     
-    
     //  MARK: 容器视图加载
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -227,8 +226,11 @@ class KCSideViewController: UIViewController {
     
     func kc_onPan(_ panner:UIPanGestureRecognizer){
         
-        let point = panner.translation(in: self.view)
+        if self.sideEnable == false {
+            return
+        }
         
+        let point = panner.translation(in: self.view)
         switch panner.state {
         case .began:
             self.beganPoint = point
@@ -325,59 +327,49 @@ class KCSideViewController: UIViewController {
 //  UIViewController侧边栏的分类
 extension UIViewController {
     
-    /**<关闭侧边栏*/
-    open func kc_closeSideViewController(animate:Bool){
-        
+    private func kc_getSideViewController()-> KCSideViewController?{
         var superVC: UIViewController? = self.parent!
         while superVC != nil {
             if (superVC?.isKind(of: KCSideViewController.self))! {
-                
                 let sideViewController = superVC as! KCSideViewController
-                sideViewController.kc_closeSide(animate: animate)
-                return
+                return sideViewController
             }
             else {
                 superVC = superVC?.parent!
             }
+        }
+        return nil
+    }
+    
+    /**<关闭侧边栏*/
+    open func kc_closeSideViewController(animate:Bool){
+        
+        let sideViewController = self.kc_getSideViewController()
+        if sideViewController != nil {
+            sideViewController?.kc_closeSide(animate: animate)
         }
     }
     
     /**<开启侧边栏*/
     open func kc_openSideViewController(left:Bool){
         
-        var superVC: UIViewController? = self.parent!
-        while superVC != nil {
-            if (superVC?.isKind(of: KCSideViewController.self))! {
-                
-                let sideViewController = superVC as! KCSideViewController
-                
-                if left {
-                    sideViewController.kc_openLeftSide()
-                }
-                else {
-                    sideViewController.kc_openRightSide()
-                }
-                return
+        let sideViewController = self.kc_getSideViewController()
+        if sideViewController != nil {
+            if left {
+                sideViewController?.kc_openLeftSide()
             }
             else {
-                superVC = superVC?.parent!
+                sideViewController?.kc_openRightSide()
             }
         }
     }
     
     /**<设置是否启用侧边栏*/
     open func kc_sideEnable(enable:Bool){
-        var superVC: UIViewController? = self.parent!
-        while superVC != nil {
-            if (superVC?.isKind(of: KCSideViewController.self))! {
-                
-                let sideViewController = superVC as! KCSideViewController
-                sideViewController.sideEnable = enable
-                return
-            }
-            else {
-                superVC = superVC?.parent!
-            }
+        
+        let sideViewController = self.kc_getSideViewController()
+        if sideViewController != nil {
+            sideViewController?.sideEnable = enable
         }
     }
 }
